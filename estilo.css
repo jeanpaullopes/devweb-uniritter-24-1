@@ -1,0 +1,75 @@
+
+        body {
+           
+        }
+        h1 {
+            color: #FF0000;
+            margin: 0px;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: #FF0000;
+            margin: 0px;
+            margin-top: 7px;
+        }
+        
+        p {
+            
+        }
+        .divCreme {
+            background-color: #e4eab5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px #f8cccc;
+            transition: background-color 0.5s;
+        }
+        .divCreme:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 0;
+            transition: background-color 0.5s;
+            
+        }
+
+        .vermelho {
+            color: #FF0000;
+        }
+
+        .grande {
+            font-size: 48px;
+        }
+
+        .Segoe {
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .ojuju {
+            font-family: "Ojuju", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+          }
+          .whisper-regular {
+            font-family: "Whisper", cursive;
+            font-weight: 400;
+            font-style: normal;
+          }
+
+          .fotoPerfil {
+            min-width: 10vmax;
+            min-height: 10vmax;
+            max-width: 96px;
+            max-height: 96px;
+            border-radius: 50%;
+            border: 10px solid #FFFFFF;
+            box-shadow: 0 0 30px #d6d6d6;
+            transition: transform 0.5s;
+            
+          }
+          .fotoPerfil:hover {
+            transform: rotate(45deg);
+            transition: transform 1s;
+          }
+          
+          
