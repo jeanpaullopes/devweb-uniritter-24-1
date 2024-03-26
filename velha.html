@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .btm {
+                border-bottom: 2px solid black;
+            }
+            .rgt {
+                border-right: 2px solid black;
+            }
+            td {
+                height: 85px;
+                width: 85px;
+                transition: background-color 0.5s;
+                font-size: 48pt;
+                text-align: center;
+                color: white;
+                text-shadow: 2px 2px 4px #000000;
+            }
+            td:hover {
+                background-color: lightgray;
+                transition: background-color 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <table style="width: 50%; margin-left: 25%; margin-top: 25%;">
+                <thead>
+
+                </thead>
+                <tbody id="tdBody">
+                <!--
+                <tr>
+                    <td id="td0" class="btm rgt" onclick="clique(0);">&nbsp;</td>
+                    <td id="td1" class="btm rgt"  onclick="clique(1);">&nbsp;</td>
+                    <td id="td2" class="btm"  onclick="clique(2);">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td3" class="btm rgt"  onclick="clique(3);">&nbsp;</td>
+                    <td id="td4" class="btm rgt"  onclick="clique(4);">&nbsp;</td>
+                    <td id="td5" class="btm" onclick="clique(5);">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="td6" class="rgt" onclick="clique(6);">&nbsp;</td>
+                    <td id="td7" class="rgt" onclick="clique(7);">&nbsp;</td>
+                    <td id="td8" onclick="clique(8);">&nbsp;</td>
+                </tr>
+                -->
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+        <div id="resultado"></div>
+        <script>
+/*
+    0 | 1 | 2
+    3 | 4 | 5   
+    6 | 7 | 8
+*/
+
+            let jog = 'X';
+            let tabuleiro = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+            // função para renderizar o array tabuleiro em uma tabela
+            function render() {
+                // cria um apontamento para o tbody
+                const tdBody = document.getElementById('tdBody');
+                tdBody.innerHTML = '';
+                
+                // cria um elemento tr
+                let tr = document.createElement('tr');
+
+                for (let i = 0; i < 3; i++) {
+                    //cria um elemento td
+                    let td = document.createElement('td');
+                    //adicona um evento de clique ao td
+                    td.onclick = function() {
+                        clique(i);
+                    };
+                    // adiciona conteúdo ao td
+                    td.innerText = tabuleiro[i];
+                    //adiciona o td ao tr
+                    tr.appendChild(td);
+                }
+                // adiciona o tr ao tbody
+                tdBody.appendChild(tr);
+
+                tr = document.createElement('tr');
+
+                for (let i = 3; i < 6; i++) {
+                    //cria um elemento td
+                    let td = document.createElement('td');
+                    td.onclick = function() {
+                        clique(i);
+                    };
+                    // adiciona conteúdo ao td
+                    td.innerText = tabuleiro[i];
+                    //adiciona o td ao tr
+                    tr.appendChild(td);
+                }
+                // adiciona o tr ao tbody
+                tdBody.appendChild(tr);
+
+                tr = document.createElement('tr');
+
+                for (let i = 6; i < 9; i++) {
+                    //cria um elemento td
+                    let td = document.createElement('td');
+                    td.onclick = function() {
+                        clique(i);
+                    };
+                    // adiciona conteúdo ao td
+                    td.innerText = tabuleiro[i];
+                    //adiciona o td ao tr
+                    tr.appendChild(td);
+                }
+                // adiciona o tr ao tbody
+                tdBody.appendChild(tr);
+            }
+
+            function testaVitoria() {
+                if (tabuleiro[0] === tabuleiro[1] && tabuleiro[1] === tabuleiro[2] && tabuleiro[0] !== ' ') {
+                     return tabuleiro[0];
+                }
+                if (tabuleiro[3] === tabuleiro[4] && tabuleiro[4] === tabuleiro[5] && tabuleiro[3] !== ' ') {
+                    return tabuleiro[3];
+                }
+                if (tabuleiro[6] === tabuleiro[7] && tabuleiro[7] === tabuleiro[8] && tabuleiro[6] !== ' ') {
+                    return tabuleiro[6];
+                }
+                if (tabuleiro[0] === tabuleiro[3] && tabuleiro[3] === tabuleiro[6] && tabuleiro[0] !== ' ') {
+                    return tabuleiro[0];
+                }
+                if (tabuleiro[1] === tabuleiro[4] && tabuleiro[4] === tabuleiro[7] && tabuleiro[1] !== ' ') {
+                    return tabuleiro[1];
+                }
+                if (tabuleiro[2] === tabuleiro[5] && tabuleiro[5] === tabuleiro[8] && tabuleiro[2] !== ' ') {
+                    return tabuleiro[2];
+                }
+                if (tabuleiro[0] === tabuleiro[4] && tabuleiro[4] === tabuleiro[8] && tabuleiro[0] !== ' ') {
+                    return tabuleiro[0];
+                }
+                if (tabuleiro[2] === tabuleiro[4] && tabuleiro[4] === tabuleiro[6] && tabuleiro[2] !== ' ') {
+                    return tabuleiro[2];
+                }
+                return false;
+            }
+
+            function clique(td) {
+                if (tabuleiro[td] !== ' ') {
+                    return;
+                }
+                tabuleiro[td] = jog;
+                if (jog === 'X') {
+                    jog = 'O';
+                } else {
+                    jog = 'X';
+                }
+                console.log(tabuleiro);
+                render();
+                const vit = testaVitoria();
+                if (vit !== false) {
+                    document.getElementById('resultado').innerText = 'Vitória do ' + vit;
+                    //tabuleiro = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                    //render();
+                }
+            }
+            render();
+        </script>
+    </body>
+</html>
