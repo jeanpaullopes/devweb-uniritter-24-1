@@ -5,10 +5,17 @@ function render() {
     app.innerHTML = `
         <h1>Olá, mundo!</h1>
         <p>Esse é um parágrafo</p>
-        <button onclick="alert('Olá')">Clique aqui</button>
+        <button onclick="pop()">Clique aqui</button>
+        <button onclick="createTable()">cria tabela</button>
     `;
 }
 
+
+function pop() {
+    dados.pop();
+    render();
+   // createTable();
+}
 function loadData() {
     //dados.push('João');
     //dados.push('Maria');
@@ -18,6 +25,7 @@ function loadData() {
     dados.push({id: 1, nome: 'João', idade: 25});
     dados.push({id: 2, nome: 'Maria', idade: 30});
     dados.push({id: 3, nome: 'José', idade: 35});
+    
     let a = new Object();
     //let a = {};
     a.id = 4;
