@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Tarefas</title>
+        <style>
+            .concluida {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
     <body>
         <h2>Tarefas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Descrição</th>
-                    <th>Responsável</th>
-                    <th>Data de Início</th>
-                    <th>Data de Término</th>
-                    <th>Concluída</th>
-                </tr>
-            </thead>
-            <tbody id="bodyTarefas">
-                
-            </tbody>
-        </table>
-        <button onclick="renderTable()">Listar Tarefas</button>
-        <div>
-            id: <input type="text" id="id"><br/>
-            descrição: <input type="text" id="descricao"><br/>
-            responsável: <input type="text" id="responsavel"><br/>
-            data de início: <input type="date" id="dataInicio"><br/>
-            data de término: <input type="date" id="dataTermino"><br/>
-            <button onclick="createTask()">Criar Tarefa</button>
-        </div>
-        <script src="tasks.js"></script>
+        <div id="app"></div>
+        
+        
+        <script src="app.js" type="module"></script>
+    
+
     </body>
 </html>

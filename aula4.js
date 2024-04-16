@@ -43,6 +43,7 @@ function loadData() {
 function createTable() {
     const app = document.getElementById('app');
     const table = document.createElement('table');
+    //table.classList.add('tabela');
     const thead = document.createElement('thead');
     const thr = document.createElement('tr');
     const th1 = document.createElement('th');
