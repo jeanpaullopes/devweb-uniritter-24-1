@@ -1,8 +1,9 @@
 import { renderTable, novaTarefa } from './tasksView.js';
-import repo  from "./repositorios.js";
+import repo from "./repositorios.js";
 
 export function addTask(task) {
     repo.tarefas.push(task);
+    repo.save();
 }
 
 function endTask(id) {

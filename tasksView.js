@@ -1,4 +1,4 @@
-import  repo  from "./repositorios.js";
+import repo from "./repositorios.js";
 
 export function novaTarefa() { 
     document.getElementById('app').innerHTML =
