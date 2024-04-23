@@ -1,0 +1,30 @@
+# Logs
+meuprimeiroprojeto/logs
+meuprimeiroprojeto/*.log
+meuprimeiroprojeto/npm-debug.log*
+meuprimeiroprojeto/yarn-debug.log*
+meuprimeiroprojeto/yarn-error.log*
+meuprimeiroprojeto/pnpm-debug.log*
+meuprimeiroprojeto/lerna-debug.log*
+
+meuprimeiroprojeto/node_modules
+meuprimeiroprojeto/.DS_Store
+meuprimeiroprojeto/dist
+meuprimeiroprojeto/dist-ssr
+meuprimeiroprojeto/coverage
+meuprimeiroprojeto/*.local
+
+meuprimeiroprojeto//cypress/videos/
+meuprimeiroprojeto//cypress/screenshots/
+
+# Editor directories and files
+meuprimeiroprojeto/.vscode/*
+meuprimeiroprojeto/!.vscode/extensions.json
+meuprimeiroprojeto/.idea
+meuprimeiroprojeto/*.suo
+meuprimeiroprojeto/*.ntvs*
+meuprimeiroprojeto/*.njsproj
+meuprimeiroprojeto/*.sln
+meuprimeiroprojeto/*.sw?
+
+meuprimeiroprojeto/*.tsbuildinfo
