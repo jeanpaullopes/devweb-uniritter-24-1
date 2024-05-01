@@ -1,8 +1,11 @@
 <template>
  <div class="divPost">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.body }}</p>
-    por: {{ post.userId }}
+    <h2 @click="aberto = !aberto">{{ post.title }}</h2>
+    
+    <div v-if="aberto">
+        <p>{{ post.body }}</p>
+        por: {{ post.userId }}
+    </div>
  </div>
 </template>
 
@@ -11,6 +14,12 @@
         name: 'PostTile',
         props: {
             post: {type: Object, required: true}
+        },
+        data() {
+            return {
+                aberto: false
+            }
+        
         }
     }
 </script>
@@ -19,5 +28,8 @@
         border: 1px solid #ccc;
         padding: 1rem;
         margin: 1rem 0;
+ }
+ .divPost:hover {
+        background-color: #f9f9f9;
  }
 </style>
